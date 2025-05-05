@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1746417219 source:d:\lap trinh nang cao\hangman2\main.cpp
+	<iostream>
+	<stdexcept>
+	<vector>
+	<algorithm>
+	<ctime>
+	"play.h"
+	"render.h"
+
+1746416951 d:\lap trinh nang cao\hangman2\play.h
+	<iostream>
+	<fstream>
+	<vector>
+	<set>
+
+1746416951 d:\lap trinh nang cao\hangman2\render.h
+	"play.h"
+
+1746419273 source:d:\lap trinh nang cao\hangman2\render.cpp
+	<iostream>
+	<thread>
+	<chrono>
+	"render.h"
+	"play.h"
+
+1746417219 source:d:\lap trinh nang cao\hangman2\play.cpp
+	"play.h"
+	"render.h"
+	<vector>
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<thread>
+	<chrono>
+	<set>
+

@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1741749260 source:d:\lap trinh nang cao\hangman\hangman_function\play.cpp
+
+1745206556 source:d:\lap trinh nang cao\hangman\main.cpp
+	<iostream>
+	<stdexcept>
+	<vector>
+	<algorithm>
+	<ctime>
+	"play.h"
+	"render.h"
+
+1745207089 source:d:\lap trinh nang cao\hangman\render.cpp
+	<iostream>
+	<thread>
+	<chrono>
+	"render.h"
+	"play.h"
+
+1741832836 source:d:\lap trinh nang cao\hangman\hangman_function\randomspawnwords.cpp
+	<cstdlib>
+	<ctime>
+	"RandomSpawnWords.h"
+
+1741832675 d:\lap trinh nang cao\hangman\hangman_function\randomspawnwords.h
+	<iostream>
+
+1745205589 d:\lap trinh nang cao\hangman\play.h
+	<iostream>
+	<fstream>
+	<vector>
+
+1745205589 source:d:\lap trinh nang cao\hangman\play.cpp
+	"play.h"
+	<vector>
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1745207081 d:\lap trinh nang cao\hangman\render.h
+
