@@ -14,6 +14,7 @@ struct state{
     int hitChain;
     int missChain;
     int missGuesses;
+    set <char> guessed;
 };
 
 struct hint {
@@ -29,11 +30,14 @@ vector <string> accessLib (const string& libPath);
 string summonFromFile(const vector <string>& summon); // sinh tu
 string createMask(const string& hidden);
 
+set <char> getGuessed (const char& guess);
+
 // Operate
 char getInputCharacter();
 
 bool isGuessHit (const char& guess, const string& hidden);
 
+void updateSetGuessed (set <char>& guessed, const char& guess);
 void newState(state& game, hint& help);
 void updateMask(const char& guess, const string& hidden, string& mask);
 void updateMissedLetters(const char& guess, string& missed);

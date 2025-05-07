@@ -35,3 +35,41 @@
 	<chrono>
 	<set>
 
+1746588974 source:d:\hangman_2\hangman2\render.cpp
+	<iostream>
+	<thread>
+	<chrono>
+	"render.h"
+	"play.h"
+
+1746416951 d:\hangman_2\hangman2\render.h
+	"play.h"
+
+1746586994 d:\hangman_2\hangman2\play.h
+	<iostream>
+	<fstream>
+	<vector>
+	<set>
+
+1746589709 source:d:\hangman_2\hangman2\play.cpp
+	"play.h"
+	"render.h"
+	<vector>
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<thread>
+	<chrono>
+	<set>
+
+1746587231 source:d:\hangman_2\hangman2\main.cpp
+	<iostream>
+	<stdexcept>
+	<vector>
+	<algorithm>
+	<ctime>
+	<thread>
+	<chrono>
+	"play.h"
+	"render.h"
+

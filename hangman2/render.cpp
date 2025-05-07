@@ -188,7 +188,6 @@ void showAchieve (const int& missChain, const int& hitChain){
     else if (hitChain >= 2){
         cout << endl << getGoodAchieve() << endl;
     }
-
 }
 
 //void showHint
@@ -215,7 +214,7 @@ void printScreen(//const string& hiddenWord, const string& maskedWord,
                  const state& game, const hint& help)
 {
     system("cls");
-    cout << getDrawing(game.missGuesses);
+    cout << endl << getDrawing(game.missGuesses);
     showTopic(TOPIC);
     showInChars (help.inChars);
     showOutedChars (help.outedChars);

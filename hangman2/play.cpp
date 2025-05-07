@@ -65,6 +65,12 @@ string createMask(const string& hidden){
     return mask;
 }
 
+void updateSetGuessed (set <char>& guessed, const char& guess){
+    if (guess >= 'a' && guess <= 'z'){
+        guessed.insert(guess);
+    }
+}
+
 bool isGuessHit (const char& guess, const string& hidden){
     for (int i = 0; i < hidden.size(); i++){
         if (guess == hidden[i]){
@@ -175,12 +181,21 @@ void useHint (state& game, hint& help, char& guess){
         guess = getInputCharacter();
         if (guess == '5'){
             int g = rand() % 4 + 1;
+            while (g == 1 &&  help.topic == "" || g == 4 && !game.missGuesses){
+                g = rand() % 4 + 1;
+            }
             guess = g + '0';
             cout << endl << "Picked: " << g;
             this_thread::sleep_for (chrono::milliseconds(2000));
         }
         if (guess == '1'){
+            if (help.topic == ""){
+                cout << endl << "1 word - 1 Topic only !";
+                this_thread::sleep_for (chrono::milliseconds(2000));
+                help.turn ++;
+            }
             getTopic(help.topic);
+            help.topic = "";
         }
         else if (guess == '2'){
             revealLetter(game.hidden, game.mask, help.inChars);
@@ -194,8 +209,14 @@ void useHint (state& game, hint& help, char& guess){
             }
             else {
                 cout << endl << "Unable to gain +1 chance";
+                help.turn ++;
                 this_thread::sleep_for (chrono::milliseconds(2000));
             }
+        }
+        else {
+            cout << endl << "Unvalid option !";
+            this_thread::sleep_for (chrono::milliseconds(1500));
+            help.turn++;
         }
         help.turn --;
     }

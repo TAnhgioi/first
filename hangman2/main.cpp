@@ -3,6 +3,8 @@
 #include<vector>
 #include<algorithm>
 #include<ctime>
+#include <thread>         // std::this_thread::sleep_for
+#include <chrono>
 
 #include  "play.h"
 #include "render.h"
@@ -39,9 +41,15 @@ int main(){
         printScreen (game, help);
         while (game.missGuesses < MAX_MISTAKES - 1 && game.mask != game.hidden){
             guess = getInputCharacter();
+            if ( game.guessed.find(guess) != game.guessed.end() ){
+                cout << endl << guess << " has been guessed !";
+                this_thread::sleep_for (chrono::milliseconds(1500));
+                printScreen (game, help);
+                continue;
+            }
+            updateSetGuessed(game.guessed, guess);
             process (guess, game, help);
             printScreen (game, help);
-
         }
         playAnimation (game);
         MAX_MISTAKES = 8;
